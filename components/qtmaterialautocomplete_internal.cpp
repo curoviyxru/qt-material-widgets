@@ -1,7 +1,7 @@
 #include "qtmaterialautocomplete_internal.h"
 #include <QSignalTransition>
 #include <QPropertyAnimation>
-#include <QtWidgets/QGraphicsOpacityEffect>
+#include <QGraphicsOpacityEffect>
 #include <QDebug>
 
 /*!
@@ -66,4 +66,19 @@ QtMaterialAutoCompleteStateMachine::QtMaterialAutoCompleteStateMachine(QWidget *
  */
 QtMaterialAutoCompleteStateMachine::~QtMaterialAutoCompleteStateMachine()
 {
+}
+
+void QtMaterialAutoCompleteStateMachine::emitClose()
+{
+    emit shouldClose();
+}
+
+void QtMaterialAutoCompleteStateMachine::emitOpen()
+{
+    emit shouldOpen();
+}
+
+void QtMaterialAutoCompleteStateMachine::emitFade()
+{
+    emit shouldFade();
 }

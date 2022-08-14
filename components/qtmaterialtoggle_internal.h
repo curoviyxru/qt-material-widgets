@@ -1,7 +1,7 @@
 #ifndef QTMATERIALTOGGLE_INTERNAL_H
 #define QTMATERIALTOGGLE_INTERNAL_H
 
-#include <QtWidgets/QWidget>
+#include <QWidget>
 #include "lib/qtmaterialrippleoverlay.h"
 
 class QtMaterialToggle;
@@ -22,8 +22,8 @@ protected slots:
     void addToggleRipple();
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
-    QRect overlayGeometry() const Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *event);
+    QRect overlayGeometry() const;
 
 private:
     Q_DISABLE_COPY(QtMaterialToggleRippleOverlay)
@@ -53,8 +53,8 @@ public:
     inline QColor thumbColor() const;
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *event);
+    void paintEvent(QPaintEvent *event);
 
 private:
     Q_DISABLE_COPY(QtMaterialToggleThumb)
@@ -102,8 +102,8 @@ public:
     inline QColor trackColor() const;
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *event);
+    void paintEvent(QPaintEvent *event);
 
 private:
     Q_DISABLE_COPY(QtMaterialToggleTrack)

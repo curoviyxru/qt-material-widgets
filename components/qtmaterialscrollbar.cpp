@@ -190,7 +190,8 @@ void QtMaterialScrollBar::paintEvent(QPaintEvent *event)
         painter.setOpacity(d->stateMachine->opacity());
     }
 
-    QRect trimmed(rect().marginsRemoved(margins));
+    QRect trimmed(QPoint(rect().left() + margins.left(), rect().top() + margins.top()),
+                  QPoint(rect().right() - margins.right(), rect().bottom() - margins.bottom()));
 
     QPainterPath path;
     path.addRoundedRect(trimmed, 3, 3);

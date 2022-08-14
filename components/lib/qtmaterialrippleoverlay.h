@@ -25,7 +25,7 @@ public:
     inline void setClipPath(const QPainterPath &path);
 
 protected:
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event);
 
     inline QList<QtMaterialRipple *> ripples() const;
 

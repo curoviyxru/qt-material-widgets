@@ -24,8 +24,8 @@ public:
     void animate();
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *event)  Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *event) ;
+    void paintEvent(QPaintEvent *event);
 
 private:
     Q_DISABLE_COPY(QtMaterialTabsInkBar)
@@ -59,13 +59,13 @@ public:
     inline void setActive(bool state);
     inline bool isActive() const;
 
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const;
 
 protected slots:
     void activateTab();
 
 protected:
-    void paintForeground(QPainter *painter) Q_DECL_OVERRIDE;
+    void paintForeground(QPainter *painter);
 
 private:
     Q_DISABLE_COPY(QtMaterialTab)

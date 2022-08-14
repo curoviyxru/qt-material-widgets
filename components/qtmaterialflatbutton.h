@@ -1,7 +1,7 @@
 #ifndef QTMATERIALFLATBUTTON_H
 #define QTMATERIALFLATBUTTON_H
 
-#include <QtWidgets/QPushButton>
+#include <QPushButton>
 #include <QScopedPointer>
 #include "lib/qtmaterialtheme.h"
 
@@ -81,7 +81,7 @@ public:
     void setTextAlignment(Qt::Alignment alignment);
     Qt::Alignment textAlignment() const;
 
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const;
 
 protected:
     enum {
@@ -90,11 +90,11 @@ protected:
 
     QtMaterialFlatButton(QtMaterialFlatButtonPrivate &d, QWidget *parent = 0, Material::ButtonPreset preset = Material::FlatPreset);
 
-    void checkStateSet() Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void checkStateSet();
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void resizeEvent(QResizeEvent *event);
+    void paintEvent(QPaintEvent *event);
 
     virtual void paintBackground(QPainter *painter);
     virtual void paintHalo(QPainter *painter);

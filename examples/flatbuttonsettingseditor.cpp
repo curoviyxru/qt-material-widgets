@@ -202,19 +202,19 @@ void FlatButtonSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("foregroundColorToolButton" == senderName) {
             m_button->setForegroundColor(color);
-            ui->foregroundColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->foregroundColorLineEdit->setText(color.name());
         } else if ("backgroundColorToolButton" == senderName) {
             m_button->setBackgroundColor(color);
-            ui->backgroundColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->backgroundColorLineEdit->setText(color.name());
         } else if ("overlayColorToolButton" == senderName) {
             m_button->setOverlayColor(color);
-            ui->overlayColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->overlayColorLineEdit->setText(color.name());
         } else if ("disabledFgColorToolButton" == senderName) {
             m_button->setDisabledForegroundColor(color);
-            ui->disableFgColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->disableFgColorLineEdit->setText(color.name());
         } else if ("disabledBgColorToolButton" == senderName) {
             m_button->setDisabledBackgroundColor(color);
-            ui->disabledBgColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->disabledBgColorLineEdit->setText(color.name());
         }
     }
     setupForm();

@@ -11,6 +11,7 @@ QtMaterialOverlayWidget::QtMaterialOverlayWidget(QWidget *parent)
 {
     if (parent) {
         parent->installEventFilter(this);
+        setGeometry(overlayGeometry());
     }
 }
 

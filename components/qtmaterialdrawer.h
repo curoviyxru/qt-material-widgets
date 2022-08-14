@@ -34,9 +34,9 @@ public slots:
     void closeDrawer();
 
 protected:
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
-    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event);
+    bool eventFilter(QObject *obj, QEvent *event);
+    void paintEvent(QPaintEvent *event);
 
     const QScopedPointer<QtMaterialDrawerPrivate> d_ptr;
 

@@ -1,8 +1,8 @@
 #include "qtmaterialtabs_internal.h"
 #include <QPainter>
 #include <QPropertyAnimation>
-#include <QtWidgets/QLayout>
-#include <QtWidgets/QLayoutItem>
+#include <QLayout>
+#include <QLayoutItem>
 #include <QEvent>
 #include "qtmaterialtabs.h"
 #include <QDebug>

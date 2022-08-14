@@ -46,10 +46,10 @@ HEADERS = mainwindow.h \
     appbarsettingseditor.h \
     autocompletesettingseditor.h \
     menusettingseditor.h
-LIBS += $$top_builddir/components/$(OBJECTS_DIR)/libcomponents.a
-INCLUDEPATH += $$top_srcdir/components/
+LIBS += $$OUT_PWD/../components/$(OBJECTS_DIR)/libcomponents.a
+INCLUDEPATH += $$PWD/../components/
 TARGET = examples-exe
-PRE_TARGETDEPS += $$top_builddir/components/$(OBJECTS_DIR)/libcomponents.a
+PRE_TARGETDEPS += $$OUT_PWD/../components/$(OBJECTS_DIR)/libcomponents.a
 
 RESOURCES += \
     examples.qrc

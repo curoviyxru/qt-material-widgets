@@ -95,7 +95,7 @@ void CircularProgressSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("colorToolButton" == senderName) {
             m_progress->setColor(color);
-            ui->colorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->colorLineEdit->setText(color.name());
         }
     }
     setupForm();

@@ -2,7 +2,7 @@
 #define QTMATERIALTEXTFIELD_INTERNAL_H
 
 #include <QStateMachine>
-#include <QtWidgets/QWidget>
+#include <QWidget>
 #include "qtmaterialtextfield.h"
 
 class QPropertyAnimation;
@@ -71,7 +71,7 @@ public:
     inline QColor color() const;
 
 protected:
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event);
 
 private:
     Q_DISABLE_COPY(QtMaterialTextFieldLabel)

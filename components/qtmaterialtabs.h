@@ -1,7 +1,7 @@
 #ifndef QTMATERIALTABS_H
 #define QTMATERIALTABS_H
 
-#include <QtWidgets/QWidget>
+#include <QWidget>
 #include <QIcon>
 #include "lib/qtmaterialtheme.h"
 

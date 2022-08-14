@@ -1,7 +1,7 @@
 #ifndef QTMATERIALCHECKABLE_INTERNAL_H
 #define QTMATERIALCHECKABLE_INTERNAL_H
 
-#include <QtWidgets/QWidget>
+#include <QWidget>
 #include <QColor>
 #include <QIcon>
 
@@ -19,7 +19,7 @@ public:
     QtMaterialCheckableIcon(const QIcon &icon, QtMaterialCheckable *parent);
     ~QtMaterialCheckableIcon();
 
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const;
 
     inline void setIcon(const QIcon &icon);
     inline QIcon icon() const;
@@ -34,7 +34,7 @@ public:
     inline qreal opacity() const;
 
 protected:
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event);
 
 private:
     Q_DISABLE_COPY(QtMaterialCheckableIcon)

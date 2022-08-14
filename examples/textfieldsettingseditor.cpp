@@ -81,16 +81,16 @@ void TextFieldSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("textColorToolButton" == senderName) {
             m_textField->setTextColor(color);
-            ui->textColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->textColorLineEdit->setText(color.name());
         } else if ("inkColorToolButton" == senderName) {
             m_textField->setInkColor(color);
-            ui->inkColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->inkColorLineEdit->setText(color.name());
         } else if ("inputLineColorToolButton" == senderName) {
             m_textField->setInputLineColor(color);
-            ui->inputLineColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->inputLineColorLineEdit->setText(color.name());
         } else if ("labelColorToolButton" == senderName) {
             m_textField->setLabelColor(color);
-            ui->labelColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->labelColorLineEdit->setText(color.name());
         }
     }
     setupForm();

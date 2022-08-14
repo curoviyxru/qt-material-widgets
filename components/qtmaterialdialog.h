@@ -23,7 +23,7 @@ public slots:
     void hideDialog();
 
 protected:
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event);
 
     const QScopedPointer<QtMaterialDialogPrivate> d_ptr;
 

@@ -1,7 +1,7 @@
 #ifndef QTMATERIALCHECKABLE_H
 #define QTMATERIALCHECKABLE_H
 
-#include <QtWidgets/QAbstractButton>
+#include <QAbstractButton>
 
 class QtMaterialCheckablePrivate;
 
@@ -42,15 +42,15 @@ public:
     void setUncheckedIcon(const QIcon &icon);
     QIcon uncheckedIcon() const;
 
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const;
 
 protected:
     QtMaterialCheckable(QtMaterialCheckablePrivate &d, QWidget *parent = 0);
 
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
-    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event);
+    bool eventFilter(QObject *obj, QEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void paintEvent(QPaintEvent *event);
 
     virtual void setupProperties();
 

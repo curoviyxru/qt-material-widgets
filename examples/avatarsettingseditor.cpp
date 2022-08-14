@@ -95,10 +95,10 @@ void AvatarSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("textColorToolButton" == senderName) {
             m_avatar->setTextColor(color);
-            ui->textColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->textColorLineEdit->setText(color.name());
         } else if ("backgroundColorToolButton" == senderName) {
             m_avatar->setBackgroundColor(color);
-            ui->backgroundColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->backgroundColorLineEdit->setText(color.name());
         }
     }
     setupForm();

@@ -1,7 +1,7 @@
 #ifndef QTMATERIALSTYLE_H
 #define QTMATERIALSTYLE_H
 
-#include <QtWidgets/QCommonStyle>
+#include <QCommonStyle>
 #include "lib/qtmaterialstyle_p.h"
 
 #define MATERIAL_DISABLE_THEME_COLORS \

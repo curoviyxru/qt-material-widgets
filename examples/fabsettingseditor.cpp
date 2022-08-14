@@ -167,16 +167,16 @@ void FloatingActionButtonSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("foregroundColorToolButton" == senderName) {
             m_fab->setForegroundColor(color);
-            ui->foregroundColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->foregroundColorLineEdit->setText(color.name());
         } else if ("backgroundColorToolButton" == senderName) {
             m_fab->setBackgroundColor(color);
-            ui->backgroundColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->backgroundColorLineEdit->setText(color.name());
         } else if ("disabledFgColorToolButton" == senderName) {
             m_fab->setDisabledForegroundColor(color);
-            ui->disabledFgColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->disabledFgColorLineEdit->setText(color.name());
         } else if ("disabledBgColorToolButton" == senderName) {
             m_fab->setDisabledBackgroundColor(color);
-            ui->disabledBgColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->disabledBgColorLineEdit->setText(color.name());
         }
     }
     setupForm();

@@ -1,6 +1,6 @@
 #include "qtmaterialtoggle.h"
 #include "qtmaterialtoggle_p.h"
-#include <QtWidgets/QApplication>
+#include <QApplication>
 #include <QStateMachine>
 #include <QSignalTransition>
 #include <QPropertyAnimation>

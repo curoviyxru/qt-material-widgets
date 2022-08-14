@@ -1,6 +1,6 @@
 #include "qtmaterialtextfield.h"
 #include "qtmaterialtextfield_p.h"
-#include <QtWidgets/QApplication>
+#include <QApplication>
 #include <QPainter>
 #include "qtmaterialtextfield_internal.h"
 #include "lib/qtmaterialstyle.h"

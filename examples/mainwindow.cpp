@@ -1,7 +1,5 @@
 #include "mainwindow.h"
-#include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QStackedLayout>
-#include <QtWidgets/QListWidget>
+#include <QHBoxLayout>
 #include "avatarsettingseditor.h"
 #include "badgesettingseditor.h"
 #include "checkboxsettingseditor.h"
@@ -26,14 +24,16 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
+    , stack(0)
+    , list(0)
 {
     QWidget *widget = new QWidget;
     QHBoxLayout *layout = new QHBoxLayout;
 
     widget->setLayout(layout);
 
-    QStackedLayout *stack = new QStackedLayout;
-    QListWidget *list = new QListWidget;
+    stack = new QStackedLayout;
+    list = new QListWidget;
 
     layout->addWidget(list);
     layout->addLayout(stack);
@@ -110,15 +110,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     list->setCurrentRow(0);
 
-    QObject::connect(list,  &QListWidget::currentItemChanged,
-        [=](QListWidgetItem *current, QListWidgetItem *previous)
-    {
-        Q_UNUSED(current)
-        Q_UNUSED(previous)
-        stack->setCurrentIndex(list->currentRow());
-    });
+    connect(list, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)), this, SLOT(currentItemChanged()));
 }
 
 MainWindow::~MainWindow()
 {
+}
+
+void MainWindow::currentItemChanged()
+{
+    stack->setCurrentIndex(list->currentRow());
 }

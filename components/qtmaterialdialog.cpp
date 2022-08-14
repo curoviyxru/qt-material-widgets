@@ -1,10 +1,10 @@
 #include "qtmaterialdialog.h"
 #include "qtmaterialdialog_p.h"
-#include <QtWidgets/QStackedLayout>
-#include <QtWidgets/QGraphicsDropShadowEffect>
+#include <QStackedLayout>
+#include <QGraphicsDropShadowEffect>
 #include <QStateMachine>
 #include <QState>
-#include <QtWidgets/QApplication>
+#include <QApplication>
 #include <QPropertyAnimation>
 #include <QPainter>
 #include "qtmaterialdialog_internal.h"
@@ -136,6 +136,7 @@ void QtMaterialDialog::showDialog()
 {
     Q_D(QtMaterialDialog);
 
+    show();
     d->stateMachine->postEvent(new QtMaterialStateTransitionEvent(DialogShowTransition));
     raise();
 }

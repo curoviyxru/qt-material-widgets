@@ -38,7 +38,7 @@ public:
     void setRelativeYPosition(qreal y);
     qreal relativeYPosition() const;
 
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const;
 
     void setIcon(const QIcon &icon);
     QIcon icon() const;
@@ -47,7 +47,7 @@ public:
     QString text() const;
 
 protected:
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event);
 
     int getDiameter() const;
 

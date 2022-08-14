@@ -96,16 +96,16 @@ void CheckBoxSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("textColorToolButton" == senderName) {
             m_checkBox->setTextColor(color);
-            ui->textColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->textColorLineEdit->setText(color.name());
         } else if ("disabledColorToolButton" == senderName) {
             m_checkBox->setDisabledColor(color);
-            ui->disabledColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->disabledColorLineEdit->setText(color.name());
         } else if ("checkedColorToolButton" == senderName) {
             m_checkBox->setCheckedColor(color);
-            ui->checkedColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->checkedColorLineEdit->setText(color.name());
         } else if ("uncheckedColorToolButton" == senderName) {
             m_checkBox->setUncheckedColor(color);
-            ui->uncheckedColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->uncheckedColorLineEdit->setText(color.name());
         }
     }
     setupForm();

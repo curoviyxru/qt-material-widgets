@@ -89,10 +89,10 @@ void ProgressSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("progressColorToolButton" == senderName) {
             m_progress->setProgressColor(color);
-            ui->progressColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->progressColorLineEdit->setText(color.name());
         } else if ("backgroundColorToolButton" == senderName) {
             m_progress->setBackgroundColor(color);
-            ui->backgroundColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->backgroundColorLineEdit->setText(color.name());
         }
     }
     setupForm();

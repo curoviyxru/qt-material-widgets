@@ -1,6 +1,6 @@
 #include "qtmaterialslider.h"
 #include "qtmaterialslider_p.h"
-#include <QtWidgets/QApplication>
+#include <QApplication>
 #include <QMouseEvent>
 #include "qtmaterialslider_internal.h"
 #include "lib/qtmaterialstyle.h"

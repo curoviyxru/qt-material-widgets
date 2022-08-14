@@ -1,7 +1,7 @@
 #include "qtmaterialtoggle_internal.h"
 #include <QPainter>
 #include <QEvent>
-#include <QtWidgets/QGraphicsDropShadowEffect>
+#include <QGraphicsDropShadowEffect>
 #include "qtmaterialtoggle.h"
 #include "lib/qtmaterialripple.h"
 
@@ -161,7 +161,7 @@ void QtMaterialToggleThumb::paintEvent(QPaintEvent *event)
 void QtMaterialToggleThumb::updateOffset()
 {
     const QSize s(Qt::Horizontal == m_toggle->orientation()
-        ? size() : size().transposed());
+                  ? size() : QSize(size().height(), size().width()));
     m_offset = m_shift*static_cast<qreal>(s.width()-s.height());
     update();
 }

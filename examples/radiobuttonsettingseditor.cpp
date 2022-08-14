@@ -122,22 +122,22 @@ void RadioButtonSettingsEditor::selectColor()
             m_radioButton1->setTextColor(color);
             m_radioButton2->setTextColor(color);
             m_radioButton3->setTextColor(color);
-            ui->textColorLineEdit_2->setText(color.name(QColor::HexRgb));
+            ui->textColorLineEdit_2->setText(color.name());
         } else if ("disabledColorToolButton_2" == senderName) {
             m_radioButton1->setDisabledColor(color);
             m_radioButton2->setDisabledColor(color);
             m_radioButton3->setDisabledColor(color);
-            ui->disabledColorLineEdit_2->setText(color.name(QColor::HexRgb));
+            ui->disabledColorLineEdit_2->setText(color.name());
         } else if ("checkedColorToolButton_2" == senderName) {
             m_radioButton1->setCheckedColor(color);
             m_radioButton2->setCheckedColor(color);
             m_radioButton3->setCheckedColor(color);
-            ui->checkedColorLineEdit_2->setText(color.name(QColor::HexRgb));
+            ui->checkedColorLineEdit_2->setText(color.name());
         } else if ("uncheckedColorToolButton_2" == senderName) {
             m_radioButton1->setUncheckedColor(color);
             m_radioButton2->setUncheckedColor(color);
             m_radioButton3->setUncheckedColor(color);
-            ui->uncheckedColorLineEdit_2->setText(color.name(QColor::HexRgb));
+            ui->uncheckedColorLineEdit_2->setText(color.name());
         }
     }
     setupForm();

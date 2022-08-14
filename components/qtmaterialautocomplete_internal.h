@@ -12,6 +12,10 @@ public:
     explicit QtMaterialAutoCompleteStateMachine(QWidget *menu);
     ~QtMaterialAutoCompleteStateMachine();
 
+    void emitOpen();
+    void emitClose();
+    void emitFade();
+
 signals:
     void shouldOpen();
     void shouldClose();

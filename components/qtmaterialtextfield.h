@@ -1,7 +1,7 @@
 #ifndef QTMATERIALTEXTFIELD_H
 #define QTMATERIALTEXTFIELD_H
 
-#include <QtWidgets/QLineEdit>
+#include <QLineEdit>
 #include <QColor>
 
 class QtMaterialTextFieldPrivate;
@@ -48,8 +48,8 @@ public:
 protected:
     QtMaterialTextField(QtMaterialTextFieldPrivate &d, QWidget *parent = 0);
 
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event);
+    void paintEvent(QPaintEvent *event);
 
     const QScopedPointer<QtMaterialTextFieldPrivate> d_ptr;
 

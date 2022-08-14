@@ -2,7 +2,7 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QEvent>
-#include <QtWidgets/QStackedLayout>
+#include <QStackedLayout>
 #include "qtmaterialdialog.h"
 
 /*!
@@ -79,7 +79,9 @@ void QtMaterialDialogProxy::paintEvent(QPaintEvent *event)
     } else if (Opaque != m_mode) {
         painter.setOpacity(m_opacity);
     }
-    QPixmap pm = m_source->grab(m_source->rect());
+    QPixmap pm(m_source->size());
+    pm.fill(Qt::transparent);
+    m_source->render(&pm, QPoint(), QRegion(m_source->rect()));
     painter.drawPixmap(0, 0, pm);
 }
 

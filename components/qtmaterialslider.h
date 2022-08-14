@@ -1,7 +1,7 @@
 #ifndef QTMATERIALSLIDER_H
 #define QTMATERIALSLIDER_H
 
-#include <QtWidgets/QAbstractSlider>
+#include <QAbstractSlider>
 #include <QScopedPointer>
 
 #define QT_MATERIAL_SLIDER_MARGIN 30
@@ -35,16 +35,16 @@ public:
     void setPageStepMode(bool pageStep);
     bool pageStepMode() const;
 
-    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
+    QSize minimumSizeHint() const;
 
     void setInvertedAppearance(bool value);
 
 protected:
-    void sliderChange(SliderChange change) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void leaveEvent(QEvent *event) Q_DECL_OVERRIDE;
+    void sliderChange(SliderChange change);
+    void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void leaveEvent(QEvent *event);
 
     void updateThumbOffset();
 

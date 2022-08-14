@@ -4,10 +4,10 @@
 #include <QEvent>
 #include <QDebug>
 #include <QMouseEvent>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QLayout>
+#include <QApplication>
+#include <QLayout>
 #include <QLinearGradient>
-#include <QtWidgets/QVBoxLayout>
+#include <QVBoxLayout>
 #include "qtmaterialdrawer_internal.h"
 
 /*!
@@ -150,7 +150,7 @@ void QtMaterialDrawer::openDrawer()
 {
     Q_D(QtMaterialDrawer);
 
-    emit d->stateMachine->signalOpen();
+    d->stateMachine->emitOpen();
 
     if (d->autoRaise) {
         raise();
@@ -163,7 +163,7 @@ void QtMaterialDrawer::closeDrawer()
 {
     Q_D(QtMaterialDrawer);
 
-    emit d->stateMachine->signalClose();
+    d->stateMachine->emitClose();
 
     if (d->overlay) {
         setAttribute(Qt::WA_TransparentForMouseEvents);

@@ -46,10 +46,10 @@ void IconButtonSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("colorToolButton" == senderName) {
             m_button->setColor(color);
-            ui->colorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->colorLineEdit->setText(color.name());
         } else if ("disabledColorToolButton" == senderName) {
             m_button->setDisabledColor(color);
-            ui->disabledColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->disabledColorLineEdit->setText(color.name());
         }
     }
     setupForm();

@@ -91,16 +91,16 @@ void ToggleSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("disabledColorToolButton" == senderName) {
             m_toggle->setDisabledColor(color);
-            ui->disabledColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->disabledColorLineEdit->setText(color.name());
         } else if ("activeColorToolButton" == senderName) {
             m_toggle->setActiveColor(color);
-            ui->activeColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->activeColorLineEdit->setText(color.name());
         } else if ("inactiveColorToolButton" == senderName) {
             m_toggle->setInactiveColor(color);
-            ui->inactiveColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->inactiveColorLineEdit->setText(color.name());
         } else if ("trackColorToolButton" == senderName) {
             m_toggle->setTrackColor(color);
-            ui->trackColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->trackColorLineEdit->setText(color.name());
         }
     }
     setupForm();

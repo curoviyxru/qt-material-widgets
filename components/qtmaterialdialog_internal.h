@@ -1,7 +1,7 @@
 #ifndef QTMATERIALDIALOG_INTERNAL_H
 #define QTMATERIALDIALOG_INTERNAL_H
 
-#include <QtWidgets/QWidget>
+#include <QWidget>
 
 class QStackedLayout;
 class QtMaterialDialog;
@@ -33,11 +33,11 @@ protected slots:
     void makeOpaque();
     void makeTransparent();
 
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const;
 
 protected:
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event);
+    void paintEvent(QPaintEvent *event);
 
 private:
     Q_DISABLE_COPY(QtMaterialDialogProxy)
@@ -68,7 +68,7 @@ public:
     int offset() const;
 
 protected:
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event);
 
 private:
     Q_DISABLE_COPY(QtMaterialDialogWindow)

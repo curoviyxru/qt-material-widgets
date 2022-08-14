@@ -1,5 +1,5 @@
 #include "appbarsettingseditor.h"
-#include <QtWidgets/QVBoxLayout>
+#include <QVBoxLayout>
 #include <QColorDialog>
 #include <qtmaterialappbar.h>
 #include <qtmaterialiconbutton.h>
@@ -77,7 +77,7 @@ void AppBarSettingsEditor::selectColor()
         QString senderName = sender()->objectName();
         if ("backgroundColorToolButton" == senderName) {
             m_appBar->setBackgroundColor(color);
-            ui->backgroundColorLineEdit->setText(color.name(QColor::HexRgb));
+            ui->backgroundColorLineEdit->setText(color.name());
         }
     }
     setupForm();

@@ -1,7 +1,7 @@
 #include "qtmaterialdrawer_internal.h"
 #include <QState>
 #include <QPainter>
-#include <QtWidgets/QLayout>
+#include <QLayout>
 #include <QSignalTransition>
 #include <QPropertyAnimation>
 #include "qtmaterialdrawer.h"
@@ -19,8 +19,12 @@ QtMaterialDrawerStateMachine::QtMaterialDrawerStateMachine(QtMaterialDrawerWidge
       m_openedState(new QState),
       m_closingState(new QState),
       m_closedState(new QState),
-      m_opacity(0)
+      m_opacity(0),
+      m_closedState_active(false)
 {
+    connect(m_closedState, SIGNAL(entered()), this, SLOT(stateEntered()));
+    connect(m_closedState, SIGNAL(exited()), this, SLOT(stateExited()));
+
     addState(m_openingState);
     addState(m_openedState);
     addState(m_closingState);
@@ -95,9 +99,19 @@ void QtMaterialDrawerStateMachine::setOpacity(qreal opacity)
     m_main->update();
 }
 
+void QtMaterialDrawerStateMachine::stateEntered()
+{
+    m_closedState_active = true;
+}
+
+void QtMaterialDrawerStateMachine::stateExited()
+{
+    m_closedState_active = false;
+}
+
 bool QtMaterialDrawerStateMachine::isInClosedState() const
 {
-    return m_closedState->active();
+    return m_closedState_active;
 }
 
 void QtMaterialDrawerStateMachine::updatePropertyAssignments()
@@ -112,6 +126,16 @@ void QtMaterialDrawerStateMachine::updatePropertyAssignments()
 
     m_openingState->assignProperty(m_drawer, "offset", 0);
     m_openingState->assignProperty(this, "opacity", 0.4);
+}
+
+void QtMaterialDrawerStateMachine::emitOpen()
+{
+    emit signalOpen();
+}
+
+void QtMaterialDrawerStateMachine::emitClose()
+{
+    emit signalClose();
 }
 
 /*!

@@ -25,6 +25,13 @@ public:
 
     void updatePropertyAssignments();
 
+    void emitOpen();
+    void emitClose();
+
+public slots:
+    void stateEntered();
+    void stateExited();
+
 signals:
     void signalOpen();
     void signalClose();
@@ -39,6 +46,7 @@ private:
     QState                 *const m_closingState;
     QState                 *const m_closedState;
     qreal                         m_opacity;
+    bool                          m_closedState_active;
 };
 
 inline qreal QtMaterialDrawerStateMachine::opacity() const
@@ -60,9 +68,9 @@ public:
     inline int offset() const;
 
 protected:
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event);
 
-    QRect overlayGeometry() const Q_DECL_OVERRIDE;
+    QRect overlayGeometry() const;
 
 private:
     int  m_offset;
