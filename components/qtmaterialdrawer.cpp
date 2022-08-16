@@ -40,7 +40,7 @@ void QtMaterialDrawerPrivate::init()
     widget       = new QtMaterialDrawerWidget;
     stateMachine = new QtMaterialDrawerStateMachine(widget, q);
     window       = new QWidget;
-    width        = 250;
+    width        = 256;
     clickToClose = false;
     autoRaise    = true;
     overlay      = false;
