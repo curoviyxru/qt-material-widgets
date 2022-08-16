@@ -59,7 +59,6 @@ void QtMaterialFlatButtonPrivate::init()
     q->setMouseTracking(true);
 
     QFont font("Roboto Medium", fontSize);
-    font.setCapitalization(QFont::AllUppercase);
     q->setFont(font);
 
     QPainterPath path;
