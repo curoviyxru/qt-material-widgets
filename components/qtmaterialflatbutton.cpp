@@ -459,6 +459,8 @@ Qt::Alignment QtMaterialFlatButton::textAlignment() const
  */
 QSize QtMaterialFlatButton::sizeHint() const
 {
+    Q_D(const QtMaterialFlatButton);
+
     ensurePolished();
 
     QSize label(fontMetrics().size(Qt::TextSingleLine, text()));
@@ -466,7 +468,7 @@ QSize QtMaterialFlatButton::sizeHint() const
     int w = 20 + label.width();
     int h = label.height();
     if (!icon().isNull()) {
-        w += iconSize().width() + QtMaterialFlatButton::IconPadding;
+        w += iconSize().width() + (Material::DrawerIcon == d->iconPlacement ? DrawerPadding : IconPadding);
         h = qMax(h, iconSize().height());
     }
     return QSize(w, 20 + h);
@@ -704,16 +706,16 @@ void QtMaterialFlatButton::paintForeground(QPainter *painter)
     QSize textSize(fontMetrics().size(Qt::TextSingleLine, text()));
     QSize base(size()-textSize);
 
-    const int iw = iconSize().width() + IconPadding;
-    QPoint pos(Qt::AlignLeft == d->textAlignment ? 12 : (base.width()-iw)/2, 0);
+    const int iw = iconSize().width() + (Material::DrawerIcon == d->iconPlacement ? DrawerPadding : IconPadding);
+    QPoint pos(Qt::AlignLeft == d->textAlignment ? (Material::DrawerIcon == d->iconPlacement ? 16 : 12) : (base.width()-iw)/2, 0);
 
     QRect textGeometry(pos + QPoint(0, base.height()/2), textSize);
     QRect iconGeometry(pos + QPoint(0, (height()-iconSize().height())/2), iconSize());
 
-    if (Material::LeftIcon == d->iconPlacement) {
+    if (Material::RightIcon != d->iconPlacement) {
         textGeometry.translate(iw, 0);
     } else {
-        iconGeometry.translate(textSize.width() + IconPadding, 0);
+        iconGeometry.translate(textSize.width() + (Material::DrawerIcon == d->iconPlacement ? DrawerPadding : IconPadding), 0);
     }
 
     painter->drawText(textGeometry, Qt::AlignCenter, text());

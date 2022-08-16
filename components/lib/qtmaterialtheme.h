@@ -33,7 +33,8 @@ namespace Material
 
     enum ButtonIconPlacement {
         LeftIcon,
-        RightIcon
+        RightIcon,
+        DrawerIcon
     };
 
     enum ProgressType {
