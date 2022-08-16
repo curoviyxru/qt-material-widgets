@@ -61,7 +61,7 @@ QtMaterialAppBar::~QtMaterialAppBar()
 
 QSize QtMaterialAppBar::sizeHint() const
 {
-    return QSize(-1, 64);
+    return QSize(-1, 56);
 }
 
 void QtMaterialAppBar::paintEvent(QPaintEvent *event)
