@@ -26,7 +26,6 @@ public:
     int                           width;
     bool                          clickToClose;
     bool                          autoRaise;
-    bool                          closed;
     bool                          overlay;
 };
 

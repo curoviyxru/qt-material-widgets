@@ -43,7 +43,6 @@ void QtMaterialDrawerPrivate::init()
     width        = 250;
     clickToClose = false;
     autoRaise    = true;
-    closed       = true;
     overlay      = false;
 
     QVBoxLayout *layout = new QVBoxLayout;
@@ -231,4 +230,11 @@ void QtMaterialDrawer::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setOpacity(d->stateMachine->opacity());
     painter.fillRect(rect(), Qt::SolidPattern);
+}
+
+bool QtMaterialDrawer::isClosed() const
+{
+    Q_D(const QtMaterialDrawer);
+
+    return d->stateMachine->isInClosedState();
 }

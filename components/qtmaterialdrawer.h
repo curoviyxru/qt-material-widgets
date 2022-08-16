@@ -29,6 +29,8 @@ public:
     void setOverlayMode(bool value);
     bool overlayMode() const;
 
+    bool isClosed() const;
+
 public slots:
     void openDrawer();
     void closeDrawer();
