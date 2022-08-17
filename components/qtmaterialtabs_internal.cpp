@@ -108,7 +108,6 @@ QtMaterialTab::QtMaterialTab(QtMaterialTabs *parent)
     setMinimumHeight(50);
 
     QFont f(font());
-    f.setStyleName("Normal");
     setFont(f);
 
     setCornerRadius(0);

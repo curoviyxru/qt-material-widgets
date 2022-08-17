@@ -29,10 +29,6 @@ void QtMaterialIconButtonPrivate::init()
     rippleOverlay->installEventFilter(q);
 
     q->setStyle(&QtMaterialStyle::instance());
-
-    QSizePolicy policy;
-    policy.setWidthForHeight(true);
-    q->setSizePolicy(policy);
 }
 
 void QtMaterialIconButtonPrivate::updateRipple()

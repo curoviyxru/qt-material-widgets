@@ -39,7 +39,7 @@ void QtMaterialBadgePrivate::init()
 
     QFont font(q->font());
     font.setPointSizeF(10);
-    font.setStyleName("Bold");
+    font.setBold(true);
     q->setFont(font);
 
     q->setText("+1");
