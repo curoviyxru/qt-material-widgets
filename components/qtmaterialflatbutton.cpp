@@ -49,7 +49,7 @@ void QtMaterialFlatButtonPrivate::init()
     fixedRippleRadius    = 64;
     cornerRadius         = 3;
     baseOpacity          = 0.13;
-    fontSize             = 10;        // 10.5;
+    fontSize             = 11;        // 10.5;
     useThemeColors       = true;
     useFixedRippleRadius = false;
     haloVisible          = true;
@@ -58,7 +58,7 @@ void QtMaterialFlatButtonPrivate::init()
     q->setAttribute(Qt::WA_Hover);
     q->setMouseTracking(true);
 
-    QFont font("Roboto Medium", fontSize);
+    QFont font("Open Sans SemiBold", fontSize);
     q->setFont(font);
 
     QPainterPath path;

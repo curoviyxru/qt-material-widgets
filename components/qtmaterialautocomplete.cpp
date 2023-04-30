@@ -107,7 +107,7 @@ void QtMaterialAutoComplete::updateResults(QString text)
     }
 
     const int diff = results.length() - d->menuLayout->count();
-    QFont font("Roboto", 12, QFont::Normal);
+    QFont font("Open Sans", 12, QFont::Normal);
 
     if (diff > 0) {
         for (int c = 0; c < diff; c++) {

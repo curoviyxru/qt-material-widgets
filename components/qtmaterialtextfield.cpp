@@ -26,7 +26,7 @@ void QtMaterialTextFieldPrivate::init()
 
     stateMachine   = new QtMaterialTextFieldStateMachine(q);
     label          = 0;
-    labelFontSize  = 9.5;
+    labelFontSize  = 10;
     showLabel      = false;
     showInputLine  = true;
     useThemeColors = true;
@@ -37,7 +37,7 @@ void QtMaterialTextFieldPrivate::init()
     q->setMouseTracking(true);
     q->setTextMargins(0, 2, 0, 4);
 
-    q->setFont(QFont("Roboto", 11, QFont::Normal));
+    q->setFont(QFont("Open Sans", 11, QFont::Normal));
 
     stateMachine->start();
     QCoreApplication::processEvents();

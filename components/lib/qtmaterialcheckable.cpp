@@ -48,7 +48,7 @@ void QtMaterialCheckablePrivate::init()
 
     q->setCheckable(true);
     q->setStyle(&QtMaterialStyle::instance());
-    q->setFont(QFont("Roboto", 11, QFont::Normal));
+    q->setFont(QFont("Open Sans", 11, QFont::Normal));
 
     stateMachine->addState(uncheckedState);
     stateMachine->addState(checkedState);

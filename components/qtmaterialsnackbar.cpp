@@ -34,7 +34,7 @@ void QtMaterialSnackbarPrivate::init()
 
     q->setAttribute(Qt::WA_TransparentForMouseEvents);
 
-    QFont font("Roboto Medium", 10);
+    QFont font("Open Sans Medium", 10);
     q->setFont(font);
 
     stateMachine->start();
