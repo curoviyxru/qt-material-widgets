@@ -127,3 +127,4 @@ HEADERS += \
 RESOURCES += \
     $$PWD/resources.qrc
 INCLUDEPATH += $$PWD
+QT += svg
